@@ -1,0 +1,23 @@
+<% if flash[:notice] %>
+  <div style="color: green; margin-bottom: 10px;">
+  </div>
+<% end %>
+
+<h1>ブックマーク一覧</h1>
+
+<div class="bookmark-list">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="bookmark-item">
+      <span class="bookmark-title"><%= bookmark.title %></span>
+      <span class="bookmark-buttons">
+        <%= link_to '表示', bookmark_path(bookmark), class: "btn btn-info" %>
+        <%= link_to '編集', edit_bookmark_path(bookmark), class: "btn btn-warning" %>
+        <%= link_to '削除', bookmark_path(bookmark),
+                    data: { turbo_method: :delete, confirm: '本当に削除しますか？' },
+                    class: "btn btn-danger" %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to '新規作成', new_bookmark_path, class: "btn btn-primary" %>

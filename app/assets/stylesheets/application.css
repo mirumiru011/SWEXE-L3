@@ -1,0 +1,20 @@
+.flash {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.flash.notice { background-color: #d4edda; color: #155724; }
+.flash.alert { background-color: #f8d7da; color: #721c24; }
+
+.bookmark-item {
+  display: flex;
+  align-items: center;       /* これで縦方向を中央揃え */
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.bookmark-buttons {
+  display: flex;
+  gap: 5px;                  /* ボタン同士の間隔 */
+}

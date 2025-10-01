@@ -1,0 +1,32 @@
+<%# app/views/bookmarks/_form.html.erb %>
+
+<% if @bookmark.errors.any? %>
+  <div style="color:red; margin-bottom: 10px;">
+    <h3>入力エラーがあります：</h3>
+    <ul>
+      <% @bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @bookmark, local: true do |f| %>
+  <div>
+    <%= f.label :title, 'タイトル' %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :url, 'URL' %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <div>
+    <%= f.submit @bookmark.new_record? ? "ブックマーク作成" : "ブックマーク更新" %>
+  </div>
+<% end %>
+
+
+
+
