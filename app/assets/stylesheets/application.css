@@ -1,10 +1,97 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* 全体のフォントと基本的なボックスモデルを定義 */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; /* 明るい背景色 */
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #4CAF50; /* 緑色系のヘッダー */
+  color: white;
+  padding: 1rem 2rem; /* パディングを増やしてゆったりと */
+  display: flex; /* Flexboxで要素を横並びに */
+  justify-content: space-between; /* 要素を両端に配置 */
+  align-items: center; /* 垂直方向の中央揃え */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem; /* リンク間のスペース */
+  font-weight: bold;
+}
+
+/* 2カラムレイアウトのコンテナ */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto; /* ページの中央に配置 */
+  padding: 0 20px;
+}
+
+/* サイドバーのスタイル */
+.sidebar {
+  flex: 0 0 250px; /* 幅を固定 */
+  background-color: #e9ecef; /* 明るいグレー */
+  padding: 1.5rem;
+  border-radius: 8px; /* 角を丸く */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影を追加 */
+  margin-right: 20px;
+}
+
+.sidebar h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none; /* リストの点を消す */
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  color: #007bff; /* リンクの色を青に */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* メインコンテンツのスタイル */
+.content {
+  flex-grow: 1; /* 残りのスペースをすべて使う */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ブックマークアイテムのスタイル */
+.bookmark-item {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.bookmark-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* フッターのスタイル */
+footer {
+  background-color: #333;
+  color: #f4f4f9;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}

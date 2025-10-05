@@ -1,9 +1,13 @@
-<% @bookmarks.each do |book| %>
- <p>
-  <%= link_to book.title, book.url %>
-  <%= link_to '削除', "/bookmarks/#{book.id}", data: {turbo_method: :delete} %>
-  <%= link_to '表示', "/bookmarks/#{book.id}" %>
-  <%= link_to '編集', "/bookmarks/#{book.id}/edit" %>
- </p>
+<h1>ブックマーク一覧</h1>
+<p><%= link_to '新規ブックマークを追加', new_bookmark_path %></p>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="bookmark-item">
+    <p>
+      <%= link_to bookmark.title, bookmark.url, target: '_blank' %>
+      <%= link_to '表示', bookmark %>
+      <%= link_to '編集', edit_bookmark_path(bookmark) %>
+      <%= link_to '削除', bookmark, data: {turbo_method: :delete, turbo_confirm: '本当に削除しますか？'} %>
+    </p>
+  </div>
 <% end %>
-<p><%= link_to '新規追加', '/bookmarks/new' %></p>

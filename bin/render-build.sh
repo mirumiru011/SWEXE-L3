@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# exit on error
+
+# ビルドに失敗した場合は停止
 set -o errexit
+
+# 依存関係をインストール
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
-bundle exec rails db:migrate
+
+# アセットをプリコンパイル
+rails assets:precompile
